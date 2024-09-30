@@ -1,6 +1,6 @@
 # React + TypeScript + Vite Starter Kit
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules. It is designed to help users quickly bootstrap their projects, allowing them to focus on building features efficiently. This starter kit is ideal for take-home challenges and small projects.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules. It is designed to help users quickly bootstrap projects, allowing them to focus on building features efficiently.
 
 ## Features
 

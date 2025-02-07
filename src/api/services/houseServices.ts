@@ -10,7 +10,7 @@ export interface HouseResponse {
   houses: House[]
 }
 
-export const fetchHouses = async ({ page = 1, per_page = 10 }: FetchHousesParams) => {
+export const fetchHouses = async ({ page = 1, per_page = 12 }: FetchHousesParams) => {
   try {
     const response = await axiosClient.get<HouseResponse>("", {
       params: { page, per_page },

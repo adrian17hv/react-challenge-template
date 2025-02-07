@@ -3,13 +3,14 @@ import { useRef, useEffect } from "react";
 import { fetchHouses } from "../../api/services/houseServices";
 import HouseCard from "./houseCard";
 import { ListContainer, LoadingMessage } from "./styles";
+import LoadingHouseList from "./loadingHouseList";
 
-const perPage = 10;
+const perPage = 12;
 
 function HousesList() {
   const observerRef = useRef<HTMLDivElement | null>(null);
 
-  const { data, fetchNextPage, hasNextPage, isFetchingNextPage, isLoading, error } = useInfiniteQuery({
+  const { data, fetchNextPage, hasNextPage, isFetching, error } = useInfiniteQuery({
     queryKey: ["houses"],
     queryFn: ({ pageParam = 1 }) => fetchHouses({ page: pageParam, per_page: perPage }),
     initialPageParam: 1,
@@ -37,7 +38,8 @@ function HousesList() {
     };
   }, [hasNextPage, fetchNextPage, data?.pages.length]);
 
-  if (isLoading) return <LoadingMessage>Loading houses...</LoadingMessage>;
+  //if (isLoading) return <LoadingMessage>Loading houses...</LoadingMessage>;
+
   if (error instanceof Error) return <LoadingMessage>Error: {error.message}</LoadingMessage>;
 
   const houseList = data?.pages.flatMap(page => page.houses);
@@ -52,7 +54,7 @@ function HousesList() {
           </div>
         );
       })}
-      {isFetchingNextPage && <LoadingMessage>Loading more houses...</LoadingMessage>}
+      {isFetching && <LoadingHouseList />}
     </ListContainer>
   );
 }

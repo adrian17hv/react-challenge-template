@@ -14,7 +14,7 @@ function HousesList() {
     queryKey: ["houses"],
     queryFn: ({ pageParam = 1 }) => fetchHouses({ page: pageParam, per_page: perPage }),
     initialPageParam: 1,
-    getNextPageParam: (lastPage, pages) => pages.length + 1,
+    getNextPageParam: (_lastPage, pages) => pages.length + 1,
     retry: 5,
     retryDelay: (attemptIndex) => Math.min(500 * 2 ** attemptIndex, 30000),
   });

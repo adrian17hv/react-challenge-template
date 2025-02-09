@@ -1,13 +1,17 @@
 import ThemeProvider from '@/theme'
 import { Main } from '@/styles'
-import Welcome from '@/components/Welcome'
+import HousesList from '../components/Houses/index'
+import Header from '@/components/header'
+import Footer from '@/components/footer'
 
 const App = () => {
   return (
     <ThemeProvider>
+        <Header />
       <Main>
-        <Welcome /> {/* Replace this with your components */}
+        <HousesList />
       </Main>
+        <Footer />
     </ThemeProvider>
   )
 }

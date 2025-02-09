@@ -38,8 +38,6 @@ function HousesList() {
     };
   }, [hasNextPage, fetchNextPage, data?.pages.length]);
 
-  //if (isLoading) return <LoadingMessage>Loading houses...</LoadingMessage>;
-
   if (error instanceof Error) return <LoadingMessage>Error: {error.message}</LoadingMessage>;
 
   const houseList = data?.pages.flatMap(page => page.houses);

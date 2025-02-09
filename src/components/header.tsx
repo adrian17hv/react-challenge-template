@@ -5,9 +5,9 @@ const Header = () => {
   return (
     <HeaderContainer>
       <Logo src={logo} alt="HomeVision Logo" />
-      <Title>RealState</Title>
+      <Title>RealEstate</Title>
       <Nav>
-        <NavLink href="#">Real state properties</NavLink>
+        <NavLink href="#">Real estate properties</NavLink>
       </Nav>
     </HeaderContainer>
   );

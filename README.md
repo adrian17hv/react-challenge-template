@@ -47,7 +47,15 @@ yarn install
 
 This will install all the necessary packages defined in `package.json`.
 
-### Step 2: Start the Application
+### Step 2: Configure Environment Variables
+
+Create a `.env` file in the root directory and define the following environment variable:
+
+```env
+VITE_API_URL=your_api_endpoint
+```
+
+### Step 3: Start the Application
 
 To start the development server, run:
 

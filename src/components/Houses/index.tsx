@@ -16,7 +16,7 @@ function HousesList() {
     initialPageParam: 1,
     getNextPageParam: (_lastPage, pages) => pages.length + 1,
     retry: 5,
-    retryDelay: (attemptIndex) => Math.min(500 * 2 ** attemptIndex, 30000),
+    retryDelay: (attemptIndex) => Math.min(500 * 2 ** attemptIndex, 20000),
   });
 
   useEffect(() => {
@@ -26,7 +26,7 @@ function HousesList() {
           fetchNextPage();
         }
       },
-      { threshold: 0 }
+      { threshold: 0.7 }
     );
 
     if (observerRef.current) {
